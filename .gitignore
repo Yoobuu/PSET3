@@ -1,0 +1,50 @@
+# === Exclusión de archivos grandes y temporales ===
+# Ignorar todos los Parquet en cualquier subcarpeta
+*.parquet
+
+# === Directorios específicos a ignorar ===
+__pycache__/
+.ipynb_checkpoints/
+.env
+.env.*
+*.log
+*.tmp
+*.bak
+*.tar
+*.gz
+*.zip
+
+# === Datos y cache ===
+work/datasets/
+data/
+cache/
+
+# === Archivos de contenedores y compilación ===
+*.pyc
+*.pyo
+*.pyd
+*.swp
+.DS_Store
+.idea/
+.vscode/
+.venv/
+.envrc
+*.egg-info/
+
+# === Docker y Jupyter ===
+.docker/
+docker-compose.override.yml
+notebooks/.ipynb_checkpoints/
+
+# === Ignorar resultados de auditoría o reportes pesados ===
+REPORT.md
+
+# === Incluir excepciones necesarias ===
+# (Asegúrate de versionar notebooks, código y configuraciones)
+!work/*.ipynb
+!docker-compose.yml
+!requirements.txt
+!scripts/
+!evidencias/
+!README.md
+!DM202501-PSet-3.pdf

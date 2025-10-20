@@ -1,0 +1,16 @@
+services:
+  pyspark-notebook:
+    image: jupyter/pyspark-notebook:latest
+    container_name: pyspark-notebook
+    ports:
+    - "8888:8888"
+    - "4148:4040"
+    volumes:
+      - ./work:/home/jovyan/work
+    environment:
+      - SPARK_LOCAL_IP=0.0.0.0
+      - PYSPARK_PYTHON=python
+      - PYSPARK_SUBMIT_ARGS=--packages net.snowflake:spark-snowflake_2.12:3.1.5,net.snowflake:snowflake-jdbc:3.26.1 pyspark-shell
+
+    env_file:
+      - .env
